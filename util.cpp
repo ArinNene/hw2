@@ -14,17 +14,18 @@ std::string convToLower(std::string src)
 /** Complete the code to convert a string containing a rawWord
     to a set of words based on the criteria given in the assignment **/
 std::set<std::string> parseStringToWords(string rawWords)
-{
-
-
-
-
-
-
-
-
-
-
+{ 
+	std::set<string> keyWords;
+	unsigned int i = 0;
+	int letterCount = 0;
+	while (i <= rawWords.length()) {
+			if ((rawWords[i] == '+' || rawWords[i] == '&' || rawWords[i] == '\'' || rawWords[i] == ';' || rawWords[i] == ',' || rawWords[i] == ' ' || rawWords[i] == '.' || rawWords[i] == '\0')) { //check delims
+			    letterCount > 1 ? rawWords[i] = '\0', keyWords.insert(&rawWords[i-letterCount]), letterCount = -1 : rawWords[i] = '\0', letterCount = -1; //if substring is longer than 1 character, add it to the set of keywords. otherwise, move on.
+			}
+			letterCount++;
+			i++;
+	}
+	return keyWords;
 }
 
 /**************************************************
