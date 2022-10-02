@@ -59,7 +59,6 @@ private:
     std::string errorMsg_;
     bool error_;
     std::map<std::string, SectionParser*> parsers_;
-
 };
 
 

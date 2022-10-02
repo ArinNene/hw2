@@ -15,8 +15,8 @@ class Clothing : public Product {
 		virtual void dump(std::ostream& os) const;
 		
 	private:
-		std::string size_;
 		std::string brand_;
+		std::string size_;
 };
 
 #endif

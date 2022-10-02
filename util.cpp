@@ -20,7 +20,7 @@ std::set<std::string> parseStringToWords(string rawWords)
 	int letterCount = 0;
 	while (i <= rawWords.length()) {
 			if ((rawWords[i] == '+' || rawWords[i] == '&' || rawWords[i] == '\'' || rawWords[i] == ';' || rawWords[i] == ',' || rawWords[i] == ' ' || rawWords[i] == '.' || rawWords[i] == '\0')) { //check delims
-			    letterCount > 1 ? rawWords[i] = '\0', keyWords.insert(&rawWords[i-letterCount]), letterCount = -1 : rawWords[i] = '\0', letterCount = -1; //if substring is longer than 1 character, add it to the set of keywords. otherwise, move on.
+			    letterCount > 1 ? rawWords[i] = '\0', keyWords.insert(convToLower(&rawWords[i-letterCount])), letterCount = -1 : rawWords[i] = '\0', letterCount = -1; //if substring is longer than 1 character, add it to the set of keywords. otherwise, move on.
 			}
 			letterCount++;
 			i++;
