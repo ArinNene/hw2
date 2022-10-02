@@ -20,3 +20,4 @@
  - Known errors/anything to help us grade (though we will run automated tests,
 knowing what features may be broken/missing may help us provide some partial credit)
 Valgrind should be good. No features should be missing. My AND/OR search will ignore mistyped or non-existent terms  (e.g. AND tommy trjan will return the Tommy book rather than nothing.)
+Also clang-format and clang-tidy are irrelevant
