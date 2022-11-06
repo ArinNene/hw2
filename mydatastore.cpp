@@ -103,7 +103,10 @@ void myDataStore::viewCart(std::string username) {
 	}
 	int i = 1;
 	for (it = userCart[username].begin(); it != userCart[username].end(); ++it) { //Iterate through the user's cart and dump the info to cout.
-		cout << "Item " << i << ": " << (*it)->getName() << endl;
+		cout << "Item " << i << endl; 
+		cout << (*it)->displayString() << endl;
+		cout << endl;
+		i++;
 	}
 }
 
@@ -136,7 +139,13 @@ void myDataStore::buyCart(std::string username) {
 
 bool myDataStore::getUser(std::string username) {
 
-	return (bool)users[username];
+	//return (bool)users[username];
+	if (users.find(username) == users.end()) {
+		return false;
+	}
+	else {
+		return true;
+	}
 
 }
 
@@ -164,11 +173,11 @@ void myDataStore::dump(std::ostream& ofile) {
 	for (it = productList.begin(); it != productList.end(); ++it) { //iterate through product list
 		(*it)->dump(ofile);
 	}
-	ofile << "<\\products>" << endl;
+	ofile << "</products>" << endl;
 	ofile << "<users>" << endl;
 	std::map<std::string, User*>::iterator itB;
 	for (itB = users.begin(); itB != users.end(); ++itB) { //iterate through user b
 		(*itB).second->dump(ofile);
 	}
-	ofile << "<\\users>" << endl;
+	ofile << "</users>" << endl;
 }

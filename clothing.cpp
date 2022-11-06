@@ -27,5 +27,5 @@ std::string Clothing::displayString() const { //concatenates all relevant info
 }
 
 void Clothing::dump(std::ostream& os) const { //dumps all relevant info to os
-	os << category_ << "\n" << name_ << "\n" << price_ << "\n" << qty_ << "\n" << size_ << "\n" << brand_ << endl;
+	os << fixed << setprecision(2) << category_ << "\n" << name_ << "\n" << price_ << "\n" << qty_ << "\n" << size_ << "\n" << brand_ << endl;
 }

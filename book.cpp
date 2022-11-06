@@ -30,6 +30,6 @@ std::string Book::displayString() const { //concatenates output string in format
 }
 
 void Book::dump(std::ostream& os) const { //dumps product>book info
-	os << category_ << "\n" << name_ << "\n" << price_ << "\n" << qty_ << "\n" << author_ << "\n" << isbn_ << endl;
+	os << fixed << setprecision(2) << category_ << "\n" << name_ << "\n" << price_ << "\n" << qty_ << "\n" << isbn_ << "\n" << author_ << endl;
 }
 
